@@ -314,11 +314,11 @@ const RESOURCES = {
 // start.
 const CORE = [
     "/spweb/",
-    "main.dart.js",
-    "index.html",
-    "assets/NOTICES",
-    "assets/AssetManifest.json",
-    "assets/FontManifest.json"
+    //"main.dart.js",
+    //"index.html",
+    //"assets/NOTICES",
+    //"assets/AssetManifest.json",
+    //"assets/FontManifest.json"
 ];
 // During install, the TEMP cache is populated with the application shell files.
 self.addEventListener("install", (event) => {
