@@ -3,7 +3,7 @@
     "short_name": "serparaiso",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#FF33DE",
+    "background_color": "#8A2BE2",
     "theme_color": "#FF33DE",
     "description": "Un proyecto serparaiso",
     "orientation": "portrait-primary",
