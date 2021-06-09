@@ -81,15 +81,11 @@ const APP_SHELL_INMUTABLE = [
 
 self.addEventListener('install', e => {
 
-    console.log("install");
-
     const cacheStatic = caches.open(STATIC_CACHE).then(cache =>
         cache.addAll(APP_SHELL));
 
     const cacheInmutable = caches.open(INMUTABLE_CACHE).then(cache =>
         cache.addAll(APP_SHELL_INMUTABLE));
-
-
 
     e.waitUntil(Promise.all([cacheStatic, cacheInmutable]));
 
@@ -97,7 +93,7 @@ self.addEventListener('install', e => {
 
 
 self.addEventListener('activate', e => {
-    console.log("activate");
+
     const respuesta = caches.keys().then(keys => {
 
         keys.forEach(key => {
@@ -123,10 +119,6 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
 
-    console.log("Detecté un fetch");
-    console.log(e.request);
-
-
     const respuesta = caches.match(e.request).then(res => {
 
         if (res) {
@@ -142,8 +134,6 @@ self.addEventListener('fetch', e => {
         }
 
     });
-
-
 
     e.respondWith(respuesta);
 
@@ -166,7 +156,5 @@ function actualizaCacheDinamico(dynamicCache, req, res) {
         console.log("No pude escribir cache dinamico");
         return res;
     }
-
-
 
 }
