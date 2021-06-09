@@ -10,6 +10,7 @@ const APP_SHELL = [
     "/spweb/",
     "main.dart.js",
     "index.html",
+    "manifest.json",
     "assets/NOTICES",
     "assets/AssetManifest.json",
     "assets/FontManifest.json"
