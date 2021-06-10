@@ -124,7 +124,7 @@ self.addEventListener('fetch', e => {
 
     if (e.request.url.icludes('/assets')) {
 
-        return manejoAssets(DYNAMIC_CACHE, e.req);
+        return manejoAssets(DYNAMIC_CACHE, e.request);
 
     } else {
 
