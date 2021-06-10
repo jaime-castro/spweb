@@ -1,6 +1,6 @@
-const STATIC_CACHE = 'static-v2';
-const DYNAMIC_CACHE = 'dynamic-v2';
-const INMUTABLE_CACHE = 'inmutable-v2';
+const STATIC_CACHE = 'static-v1';
+const DYNAMIC_CACHE = 'dynamic-v1';
+const INMUTABLE_CACHE = 'inmutable-v1';
 
 // Cache estático
 const APP_SHELL = [
@@ -85,10 +85,9 @@ self.addEventListener('install', e => {
         cache.addAll(APP_SHELL));
 
     const cacheInmutable = caches.open(INMUTABLE_CACHE).then(cache =>
-        cache.addAll(APP_SHELL_INMUTABLE))
-    e.waitUntil(Promise.all([cacheStatic, cacheInmutable]));
+        cache.addAll(APP_SHELL_INMUTABLE));
 
-    e.waitUntil(Promise.all([cacheStatic]));
+    e.waitUntil(Promise.all([cacheStatic, cacheInmutable]));
 
 });
 
