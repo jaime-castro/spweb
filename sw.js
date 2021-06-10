@@ -120,21 +120,32 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
 
-    const respuesta = caches.match(e.request).then(res => {
+    let respuesta;
 
-        if (res) {
-            return res;
-        } else {
+    if (e.request.url.icludes('/assets')) {
 
-            return fetch(e.request).then(newRes => {
+        return manejoAssets(DYNAMIC_CACHE, e.req);
 
-                return actualizaCacheDinamico(DYNAMIC_CACHE, e.request, newRes);
+    } else {
 
-            });
+        respuesta = caches.match(e.request).then(res => {
 
-        }
+            if (res) {
+                return res;
+            } else {
 
-    });
+                return fetch(e.request).then(newRes => {
+
+                    return actualizaCacheDinamico(DYNAMIC_CACHE, e.request, newRes);
+
+                });
+
+            }
+
+        });
+
+
+    }
 
     e.respondWith(respuesta);
 
@@ -157,5 +168,22 @@ function actualizaCacheDinamico(dynamicCache, req, res) {
 
         return res;
     }
+
+}
+
+// Network with cache fallback / update
+function manejoAssets(cacheName, req) {
+
+    return fetch(req).then(res => {
+
+        if (res.ok) {
+            actualizaCacheDinamico(cacheName, req, res.clone());
+            return res.clone();
+        } else {
+            return caches.match(req);
+        }
+    }).catch(err => {
+        return caches.match(req);
+    });
 
 }
