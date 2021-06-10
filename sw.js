@@ -153,7 +153,7 @@ function actualizaCacheDinamico(dynamicCache, req, res) {
         });
 
     } else {
-        console.log("No pude escribir cache dinamico");
+
         return res;
     }
 
