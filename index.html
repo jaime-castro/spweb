@@ -49,16 +49,16 @@
         //}
         var url = window.location.href;
         var swLocation = '/spweb/sw.js';
-        console.log("Entré al script")
+
         if (navigator.serviceWorker) {
-            console.log("Entré al primer if");
+
             if (url.includes('localhost')) {
-                console.log("Entré al segundo if");
+
                 swLocation = '/sw.js';
             }
 
             navigator.serviceWorker.register(swLocation);
-            console.log("Activé el sw");
+
         }
     </script>
 
