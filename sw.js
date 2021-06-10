@@ -122,7 +122,7 @@ self.addEventListener('fetch', e => {
 
     let respuesta;
 
-    if (e.request.url.icludes('/assets')) {
+    if (e.request.url.includes('/assets')) {
 
         return manejoAssets(DYNAMIC_CACHE, e.request);
 
