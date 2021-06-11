@@ -123,6 +123,7 @@ self.addEventListener('fetch', e => {
     const respuesta = caches.match(e.request).then(res => {
 
         if (res) {
+            console.log("Estuvo en el cache");
             return res;
         } else {
 
