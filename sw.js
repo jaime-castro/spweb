@@ -115,20 +115,29 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
 
-    console.log("Encontré un fetch");
+    console.log("Entré al fetch");
     console.log(e.request);
 
     const respuesta = caches.match(e.request).then(res => {
+
         if (res) {
             return res;
         } else {
+
             return fetch(e.request).then(newRes => {
+
                 return actualizaCacheDinamico(DYNAMIC_CACHE, e.request, newRes);
+
             });
+
         }
+
     });
 
+
+
     e.respondWith(respuesta);
+
 });
 
 // Guardar  en el cache dinamico
