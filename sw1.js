@@ -1,5 +1,5 @@
-const CACHE_STATIC_NAME = 'static-v6';
-const CACHE_DYNAMIC_NAME = 'dynamic-v1';
+const CACHE_STATIC_NAME = 'static-v1';
+const CACHE_DYNAMIC_NAME = 'dynamic-v2';
 const CACHE_INMUTABLE_NAME = 'inmutable-v1';
 
 
@@ -35,6 +35,7 @@ self.addEventListener('install', e => {
                 "assets/NOTICES",
                 "assets/AssetManifest.json",
                 "assets/FontManifest.json",
+                "pages/offline.html"
             ]);
 
         });
