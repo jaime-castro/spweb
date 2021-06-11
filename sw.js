@@ -91,7 +91,6 @@ self.addEventListener('install', e => {
 
 });
 
-
 self.addEventListener('activate', e => {
 
     const respuesta = caches.keys().then(keys => {
@@ -114,10 +113,10 @@ self.addEventListener('activate', e => {
 
 });
 
-
-
-
 self.addEventListener('fetch', e => {
+
+    console.log("Encontré un fetch");
+    console.log(e.request);
 
     const respuesta = caches.match(e.request).then(res => {
         if (res) {
