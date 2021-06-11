@@ -136,7 +136,7 @@ self.addEventListener('fetch', e => {
                     caches.open(CACHE_DYNAMIC_NAME)
                         .then(cache => {
                             cache.put(e.request, newResp);
-                            limpiarCache(CACHE_DYNAMIC_NAME, 50);
+                            limpiarCache(CACHE_DYNAMIC_NAME, 100);
                         });
 
                     return newResp.clone();
