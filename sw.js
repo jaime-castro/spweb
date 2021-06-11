@@ -80,7 +80,7 @@ const APP_SHELL_INMUTABLE = [
 ];
 
 self.addEventListener('install', e => {
-
+    console.log("Install sw");
     const cacheStatic = caches.open(STATIC_CACHE).then(cache =>
         cache.addAll(APP_SHELL));
 
@@ -92,7 +92,7 @@ self.addEventListener('install', e => {
 });
 
 self.addEventListener('activate', e => {
-
+    console.log("Activa sw");
     const respuesta = caches.keys().then(keys => {
 
         keys.forEach(key => {
