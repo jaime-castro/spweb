@@ -113,7 +113,7 @@ self.addEventListener('activate', e => {
 
 });
 
-self.addEventListener('fetch', e => {
+self.addEventListener("fetch", e => {
 
     console.log("Entré al fetch");
     console.log(e.request);
