@@ -113,7 +113,9 @@ self.addEventListener('activate', e => {
 
 });
 
-self.addEventListener("fetch", e => {
+console.log("Antes del fetch");
+
+self.addEventListener('fetch', e => {
 
     console.log("Entré al fetch");
     console.log(e.request);
