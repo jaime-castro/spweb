@@ -65,24 +65,24 @@
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
     <script>
-        //if ('serviceWorker' in navigator) {
-        //    window.addEventListener('flutter-first-frame', function() {
-        //        navigator.serviceWorker.register('flutter_service_worker.js?v=383846699');
-        //    });
-        //}
-        var url = window.location.href;
-        var swLocation = '/spweb/sw.js';
-
-        if (navigator.serviceWorker) {
-
-            if (url.includes('localhost')) {
-
-                swLocation = '/sw.js';
-            }
-
-            navigator.serviceWorker.register(swLocation);
-
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('flutter-first-frame', function() {
+                navigator.serviceWorker.register('flutter_service_worker.js?v=383846699');
+            });
         }
+        //var url = window.location.href;
+        //var swLocation = '/spweb/sw.js';
+//
+        //if (navigator.serviceWorker) {
+//
+        //    if (url.includes('localhost')) {
+//
+        //        swLocation = '/sw.js';
+        //    }
+//
+        //    navigator.serviceWorker.register(swLocation);
+//
+        //}
     </script>
 
     <script src="main.dart.js" type="application/javascript"></script>
