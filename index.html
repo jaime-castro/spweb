@@ -71,13 +71,13 @@
         //    });
         //}
         var url = window.location.href;
-        var swLocation = '/spweb/sw1.js';
+        var swLocation = '/spweb/sw.js';
 
         if (navigator.serviceWorker) {
 
             if (url.includes('localhost')) {
 
-                swLocation = '/sw1.js';
+                swLocation = '/sw.js';
             }
 
             navigator.serviceWorker.register(swLocation);

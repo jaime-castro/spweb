@@ -121,7 +121,7 @@ self.addEventListener('fetch', e => {
 
     let respuesta;
 
-    if (e.request.url.includes('/assets')) {
+    if (e.request.url.includes('GET')) {
 
         return manejoAssets(DYNAMIC_CACHE, e.request);
 
